@@ -35,8 +35,7 @@ namespace CruiseAssistant
         {
             socketClient = new DiscordSocketClient(new DiscordSocketConfig
             {
-                LogLevel = LogSeverity.Verbose,
-                AlwaysDownloadUsers = true
+                LogLevel = LogSeverity.Verbose
             });
             socketClient.Log += Log;
 

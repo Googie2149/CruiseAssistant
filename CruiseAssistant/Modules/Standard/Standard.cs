@@ -65,6 +65,7 @@ namespace CruiseAssistant.Modules.Standard
         }
 
         [Command("tally")]
+        [PTNSWineRunners]
         public async Task CruiseTally()
         {
             // A lot of this is super basic because I slapped it together in a few hours with parts from past projects
@@ -72,11 +73,11 @@ namespace CruiseAssistant.Modules.Standard
 
             var author = Context.User as SocketGuildUser;
 
-            if (!CheckAccess())
-            {
-                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
-                return;
-            }
+            //if (!CheckAccess())
+            //{
+            //    //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
+            //    return;
+            //}
 
             EmbedBuilder builder = new EmbedBuilder();
 
@@ -92,13 +93,14 @@ namespace CruiseAssistant.Modules.Standard
 
         [Command("ooze")]
         [Alias("booze")]
+        [PTNSWineRunners]
         public async Task CruiseStatus(string changeStatus = "")
         {
-            if (!CheckAccess())
-            {
-                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
-                return;
-            }
+            //if (!CheckAccess())
+            //{
+            //    //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
+            //    return;
+            //}
 
             if (changeStatus.ToLower() == "start")
             {
