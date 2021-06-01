@@ -60,9 +60,10 @@ namespace CruiseAssistant.Services
                     output.AppendLine($"**Wine per capita** — {table[3][1]}");
                     output.AppendLine($"**Wine per carrier** — {table[4][1]}");
                     output.AppendLine($"**280t Python Loads** — {table[5][1]}");
-                    output.AppendLine($"**Wine Total** — {table[6][1]}");
                     output.AppendLine();
+                    output.AppendLine($"**Wine Total** — {table[6][1]}");
                     output.AppendLine($"**Total Profit** — {table[7][1]}");
+                    output.AppendLine();
                     output.AppendLine($"**# of Fleet Carriers that profit can buy** — {table[8][1]}");
 
                     return output.ToString();
