@@ -86,7 +86,7 @@ namespace CruiseAssistant.Modules.Standard
                 .WithDescription($"{await spreadsheet.GetPage()}")
                 .WithColor(Discord.Color.DarkMagenta)
                 //.WithThumbnailUrl("https://cdn.discordapp.com/attachments/783783142737182724/849153687392878632/pythonwinecropped.png")
-                .WithThumbnailUrl("https://cdn.discordapp.com/attachments/783783142737182724/849153698365702144/haulerwinecropped.png")
+                //.WithThumbnailUrl("https://cdn.discordapp.com/attachments/783783142737182724/849153698365702144/haulerwinecropped.png")
                 .Build());
         }
 
