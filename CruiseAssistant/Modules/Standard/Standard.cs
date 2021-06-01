@@ -74,7 +74,7 @@ namespace CruiseAssistant.Modules.Standard
 
             if (!CheckAccess())
             {
-                await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
+                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace CruiseAssistant.Modules.Standard
 
             await ReplyAsync(embed: builder
                 .WithTitle("P.T.N. Booze Cruise Tally")
-                .WithImageUrl("https://cdn.discordapp.com/attachments/783783142737182724/849153982341316609/ucOIcpAvyWMC4tLIZ44dNtd3SQ18339TF1qJpN3eKYFKEfdQyjl5xSNzA2lX-W6p5Ib0ha5w3NN47SYb1gMjOF24dLhIbojMw8LF.png")
+                .WithImageUrl("https://cdn.discordapp.com/attachments/783783142737182724/849157248923992085/unknown.png")
                 .WithDescription($"{await spreadsheet.GetPage()}")
                 .WithColor(Discord.Color.DarkMagenta)
                 //.WithThumbnailUrl("https://cdn.discordapp.com/attachments/783783142737182724/849153687392878632/pythonwinecropped.png")
@@ -96,7 +96,7 @@ namespace CruiseAssistant.Modules.Standard
         {
             if (!CheckAccess())
             {
-                await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
+                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
                 return;
             }
 
