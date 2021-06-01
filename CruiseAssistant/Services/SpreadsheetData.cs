@@ -54,17 +54,17 @@ namespace CruiseAssistant.Services
                     //output.AppendLine(new string('_', 46));
                     //output.AppendLine($"{"# of Fleet Carriers that profit can buy"}  {table[8][1]}");
 
-                    output.AppendLine($"**# of Carriers** — {table[0][1]}");
-                    output.AppendLine($"**Profit per ton** — {table[1][1]}");
-                    output.AppendLine($"**Rackham Pop** — {table[2][1]}");
-                    output.AppendLine($"**Wine per capita** — {table[3][1]}");
-                    output.AppendLine($"**Wine per carrier** — {table[4][1]}");
-                    output.AppendLine($"**280t Python Loads** — {table[5][1]}");
+                    output.AppendLine($"**{table[0][0]}** — {table[0][1]}");
+                    output.AppendLine($"**{table[1][0]}** — {table[1][1]}");
+                    output.AppendLine($"**{table[2][0]}** — {table[2][1]}");
+                    output.AppendLine($"**{table[3][0]}** — {table[3][1]}");
+                    output.AppendLine($"**{table[4][0]}** — {table[4][1]}");
+                    output.AppendLine($"**{table[5][0]}** — {table[5][1]}");
                     output.AppendLine();
-                    output.AppendLine($"**Wine Total** — {table[6][1]}");
-                    output.AppendLine($"**Total Profit** — {table[7][1]}");
+                    output.AppendLine($"**{table[6][0]}** — {table[6][1]}");
+                    output.AppendLine($"**{table[7][0]}** — {table[7][1]}");
                     output.AppendLine();
-                    output.AppendLine($"**# of Fleet Carriers that profit can buy** — {table[8][1]}");
+                    output.AppendLine($"**{table[8][0]}** — {table[8][1]}");
 
                     return output.ToString();
                 }
