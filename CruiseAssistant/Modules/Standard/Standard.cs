@@ -73,11 +73,11 @@ namespace CruiseAssistant.Modules.Standard
 
             var author = Context.User as SocketGuildUser;
 
-            //if (!CheckAccess())
-            //{
-            //    //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
-            //    return;
-            //}
+            if (!CheckAccess())
+            {
+                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
+                return;
+            }
 
             EmbedBuilder builder = new EmbedBuilder();
 
@@ -96,11 +96,11 @@ namespace CruiseAssistant.Modules.Standard
         [PTNSWineRunners]
         public async Task CruiseStatus(string changeStatus = "")
         {
-            //if (!CheckAccess())
-            //{
-            //    //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
-            //    return;
-            //}
+            if (!CheckAccess())
+            {
+                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
+                return;
+            }
 
             if (changeStatus.ToLower() == "start")
             {
