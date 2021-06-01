@@ -65,6 +65,8 @@ namespace CruiseAssistant.Services
                     output.AppendLine($"**{table[7][0]}** — {table[7][1]}");
                     output.AppendLine();
                     output.AppendLine($"**{table[8][0]}** — {table[8][1]}");
+                    output.AppendLine();
+                    output.AppendLine("[Have a carrier? Sign up for the cruise here!](https://forms.gle/dWugae3M3i76NNVi7)");
 
                     return output.ToString();
                 }
