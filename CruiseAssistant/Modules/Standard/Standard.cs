@@ -88,6 +88,7 @@ namespace CruiseAssistant.Modules.Standard
         }
 
         [Command("ooze")]
+        [Alias("booze")]
         public async Task CruiseStatus(string changeStatus = "")
         {
             if (!CheckAccess())
