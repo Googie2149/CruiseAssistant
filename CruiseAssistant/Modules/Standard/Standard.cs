@@ -217,6 +217,19 @@ namespace CruiseAssistant.Modules.Standard
 
             await ReplyAsync(output.ToString());
         }
+        
+        [Command("mitri")]
+        [PTNSWineRunners]
+        public async Task SendMitri()
+        {
+            if (!CheckAccess())
+            {
+                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
+                return;
+            }
+            
+            await RespondAsync("https://www.kapwing.com/videos/60b93a3ae6672200d5727b63");
+        }
 
         [Command("ping")]
         [Summary("A simple ping command")]
