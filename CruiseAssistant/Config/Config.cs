@@ -28,10 +28,13 @@ namespace CruiseAssistant
         public List<ulong> OwnerIds { get; set; } = new List<ulong>();
 
         [JsonProperty("cruise_status")]
-        public bool CruiseStatus = false;
+        public bool CruiseStatus { get; set; } = false;
 
         [JsonProperty("cruise_link")]
-        public string CruiseTallyLink = "";
+        public string CruiseTallyLink { get; set; } = "";
+
+        [JsonProperty("update_messages")]
+        public Dictionary<ulong, ulong> UpdateMessageIds { get; set; } = new Dictionary<ulong, ulong>();
 
         public static Config Load()
         {

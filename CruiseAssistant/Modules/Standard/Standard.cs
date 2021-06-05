@@ -41,6 +41,9 @@ namespace CruiseAssistant.Modules.Standard
         // Definitely replace with something better in the future.
         // Preferably configurable
         // This should also be a precondition to be cleaner
+
+        // Update: This has been made into a precondition, but the precondition needs to be fixed.
+        // All it currently does is hide things from the help command.
         private bool CheckAccess()
         {
             var user = Context.User as SocketGuildUser;
@@ -64,31 +67,34 @@ namespace CruiseAssistant.Modules.Standard
                 return false;
         }
 
+        [Command("makepin")]
+        [PTNSWineRunners]
+        public async Task CreateNewPinnedMessage()
+        {
+            if (!CheckAccess())
+            {
+                return;
+            }
+
+            var message = await ReplyAsync(embed: await spreadsheet.GetPage());
+
+            await Task.Delay(1000);
+
+            config.UpdateMessageIds.Add(Context.Channel.Id, message.Id);
+        }
+
         [Command("tally")]
         [PTNSWineRunners]
         public async Task CruiseTally()
         {
             // A lot of this is super basic because I slapped it together in a few hours with parts from past projects
             // Definitely a lot of room for improvement
-
-            var author = Context.User as SocketGuildUser;
-
             if (!CheckAccess())
             {
-                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
                 return;
             }
 
-            EmbedBuilder builder = new EmbedBuilder();
-
-            await ReplyAsync(embed: builder
-                .WithTitle("P.T.N. Booze Cruise Tally")
-                .WithImageUrl("https://cdn.discordapp.com/attachments/783783142737182724/849157248923992085/unknown.png")
-                .WithDescription($"{await spreadsheet.GetPage()}")
-                .WithColor(Discord.Color.DarkMagenta)
-                //.WithThumbnailUrl("https://cdn.discordapp.com/attachments/783783142737182724/849153687392878632/pythonwinecropped.png")
-                //.WithThumbnailUrl("https://cdn.discordapp.com/attachments/783783142737182724/849153698365702144/haulerwinecropped.png")
-                .Build());
+            await ReplyAsync(embed: await spreadsheet.GetPage());
         }
 
         [Command("ooze")]
@@ -98,7 +104,6 @@ namespace CruiseAssistant.Modules.Standard
         {
             if (!CheckAccess())
             {
-                //await RespondAsync(":no_good::skin-tone-3: You don't have permission to run this command!");
                 return;
             }
 
