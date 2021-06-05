@@ -79,9 +79,6 @@ namespace CruiseAssistant.Services
 
                     var embed = FormatPage(content);
 
-                    if (oldContent == null)
-                        oldContent = content;
-
                     if (content != oldContent)
                     {
                         oldContent = content;
