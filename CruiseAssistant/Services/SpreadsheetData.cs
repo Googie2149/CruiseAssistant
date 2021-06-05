@@ -48,7 +48,7 @@ namespace CruiseAssistant.Services
 
             foreach (var kv in config.UpdateMessageIds)
             {
-                var m = await ((SocketTextChannel)socketClient.GetChannel(kv.Key)).GetMessageAsync(kv.Value);
+                var m = await ((SocketTextChannel)socketClient.GetChannel(kv.Key)).GetMessageAsync(kv.Value) as IUserMessage;
 
                 if (m == null)
                 {
@@ -56,7 +56,7 @@ namespace CruiseAssistant.Services
                     continue;
                 }
 
-                await ((SocketUserMessage)m).ModifyAsync(x => x.Embed = embed);
+                await m.ModifyAsync(x => x.Embed = embed);
                 await Task.Delay(1000);
             }
 
@@ -86,7 +86,10 @@ namespace CruiseAssistant.Services
                     {
                         oldContent = content;
 
-                        UpdateMessages(embed);
+                        Task.Run(async () =>
+                        {
+                           await UpdateMessages(embed);
+                        });
                     }
 
                     return embed;
